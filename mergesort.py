@@ -21,11 +21,13 @@ def merge_sort(arr):
                 j += 1
             k += 1
 
+        # copy the remaining elements from the left_arr
         while i < len(left_arr):
             arr[k] = left_arr[i]
             i += 1
             k += 1
 
+        # copy the remaining elements from the right_arr
         while j < len(right_arr):
             arr[k] = right_arr[j]
             j += 1
