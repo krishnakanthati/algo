@@ -21,9 +21,28 @@ class Stack:
     def size(self):
         return len(self.container)
 
-s = Stack()
-s.push(5)
-s.push(25)
+def is_match(ch1, ch2):
+    match_dict = {
+        ')': '(',
+        '}': '{',
+        ']': '['
+    }
+    return match_dict[ch1] == ch2
 
-print(s.pop()) # 25
-print(s.size()) # 1
+def is_balanced(s):
+    stack = Stack()
+    for ch in s:
+        if ch == '(' or ch == '{' or ch == '[':
+            stack.push(ch)
+        elif ch == ')' or ch == '}' or ch == ']':
+            if stack.size() == 0:
+                return False
+            elif not is_match(ch, stack.pop()):
+                return False
+    return stack.size() == 0
+
+
+if __name__ == '__main__':
+    print(is_balanced("(a+b))")) # False
+    print(is_balanced("a+(b+c)+{s+t}+[12*6]")) # True
+    print(is_balanced("s+k+7 - {9*8} / [[75]")) # False
