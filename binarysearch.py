@@ -1,3 +1,5 @@
+# itterative binary search
+
 def binary_search(a, k):
     left = 0
     right = len(a) -1
