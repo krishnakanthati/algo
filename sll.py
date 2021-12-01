@@ -76,7 +76,7 @@ linkedList = LinkedList()
 
 linkedList.insertEnd(firstNode)
 linkedList.insertEnd(secondNode)
-# linkedList.insertHead(thirdNode)
+linkedList.insertHead(thirdNode)
 linkedList.insertAt(thirdNode, 3)
 
 linkedList.printList() # John -> Ben -> Kris -> None
