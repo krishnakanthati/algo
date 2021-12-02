@@ -52,6 +52,14 @@ class LinkedList:
                     break
                 lastNode = lastNode.next
             lastNode.next = newNode
+        
+    def deleteEnd(self):
+        lastNode = self.head
+        while lastNode.next is not None:
+            previousNode = lastNode
+            lastNode = lastNode.next
+        previousNode.next = None
+        del lastNode
 
     def printList(self):
         if self.head is None:
@@ -76,7 +84,9 @@ linkedList = LinkedList()
 
 linkedList.insertEnd(firstNode)
 linkedList.insertEnd(secondNode)
-linkedList.insertHead(thirdNode)
-linkedList.insertAt(thirdNode, 3)
+# linkedList.insertHead(thirdNode)
+linkedList.insertAt(thirdNode, 1)
+
+linkedList.deleteEnd() # 10 -> 15 -> None
 
 linkedList.printList() # John -> Ben -> Kris -> None
