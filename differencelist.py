@@ -1,5 +1,6 @@
 a = [10, 5, 20, 40]
-b = [10, 5, 20, 40]
+b = a.copy()
+n = len(a)
 
 
 def update(l, r, x):
@@ -10,14 +11,14 @@ def update(l, r, x):
 
 def difference_array(l, r, x):
     d = []
-    for i in range(len(b)):
+    for i in range(n):
         if i == 0:
             d.append(b[i])
         else:
             d.append(b[i]-b[i-1])
     d[l] = d[l] + x
     d[r+1] = d[r+1] - x
-    for i in range(len(b)):
+    for i in range(n):
         if i == 0:
             b[i] = d[i]
             res = d[i]
