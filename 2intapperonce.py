@@ -23,4 +23,4 @@ for i in a:
         xor2 ^= i
 
 
-print(xor1, xor2)
+print(xor1, xor2)  # 5 9
