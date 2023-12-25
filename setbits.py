@@ -29,7 +29,7 @@ n = 107
 c = 0
 
 while n != 0:
-    n &= n-1  # count the last set bit
+    n &= n-1  # count the last set bit & turns it off
     c += 1
     n >>= 1
 
