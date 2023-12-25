@@ -1,25 +1,13 @@
-# petr and combination lock
+a = [1, 1, 1, 2, 2, 2, 4, 4, 4, 7, 7, 7, 6, 6, 6, 5]
+ans = 0
 
-a = [90, 265, 1, 1, 1, 1, 1]
-n = len(a)
+for i in range(0, 32):
+    c = 0
+    for j in a:
+        if j & (1 << i):
+            c += 1
 
-# total set is 2 ** n
+    if c % 3 == 1:
+        ans += 2 ** i
 
-flag = 0
-
-for i in range(0, 2**n):
-    ds = 0
-    for bit in range(0, n):
-        if i & (1 << bit):
-            ds += a[bit]
-        else:
-            ds -= a[bit]
-    if ds % 360 == 0:
-        flag = 1
-        print("YES")
-        break
-
-if not flag:
-    print("NO")
-
-# YES
+print(ans)
