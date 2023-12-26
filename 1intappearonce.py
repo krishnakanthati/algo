@@ -1,4 +1,4 @@
-a = [1, 1, 1, 2, 2, 2, 4, 4, 4, 7, 7, 7, 6, 6, 6, 9]
+a = [1, 1, 1, 2, 2, 2, 5, 5, 5, 9]
 
 # checks if the sum of bits at a pos is multiple of 3
 # if not multiple than add that (2 ** posofbit) to the ans
@@ -19,4 +19,16 @@ ones, twos = 0, 0
 for i in a:
     ones = (ones ^ i) & (~twos)
     twos = (twos ^ i) & (~ones)
+# print(ones)  # 9
+
+
+ones = 0
+twos = 0
+
+for i in a:
+    twos = twos ^ (ones & i)
+    ones = ones ^ i
+    common_bit_mask = ~(ones & twos)
+    ones &= common_bit_mask
+    twos &= common_bit_mask
 print(ones)  # 9
