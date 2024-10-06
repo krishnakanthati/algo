@@ -20,3 +20,4 @@ num1 = 7
 num2 = 8
 
 print("The L.C.M. is", compute_lcm(num1, num2))
+# The L.C.M. is 56
